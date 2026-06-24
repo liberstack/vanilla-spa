@@ -1,0 +1,268 @@
+/* ── Reset & base ─────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --border: #2a2a2a;
+  --text: #e2e2e2;
+  --muted: #888;
+  --accent: #7c6fff;
+  --accent-h: #a99fff;
+  --radius: 6px;
+  --max-w: 900px;
+  --font: 'Inter', system-ui, sans-serif;
+  --mono: 'Fira Code', 'Cascadia Code', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+/* ── Header / Nav ─────────────────────────────────── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 3rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+
+.site-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.15s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent-h);
+}
+
+/* ── Main / content ───────────────────────────────── */
+main {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.loading {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #f87171;
+}
+
+/* ── Markdown body ────────────────────────────────── */
+.md-body {
+  max-width: 100%;
+}
+
+.md-body h1,
+.md-body h2,
+.md-body h3,
+.md-body h4 {
+  color: #fff;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
+}
+
+.md-body h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-top: 0;
+}
+
+.md-body h2 {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.md-body h3 {
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.md-body p {
+  margin-bottom: 1.2rem;
+}
+
+.md-body a {
+  color: var(--accent-h);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.md-body a:hover {
+  color: #fff;
+}
+
+.md-body ul,
+.md-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.md-body li {
+  margin-bottom: 0.4rem;
+}
+
+.md-body blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
+  color: var(--muted);
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.md-body code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--surface);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  color: var(--accent-h);
+}
+
+.md-body pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.md-body pre code {
+  background: none;
+  padding: 0;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.md-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.md-body img {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+
+.md-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.md-body th,
+.md-body td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+
+.md-body th {
+  background: var(--surface);
+  color: #fff;
+}
+
+/* 404 */
+.not-found {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.not-found h1 {
+  font-size: 6rem;
+  color: var(--border);
+  margin-bottom: 0.5rem;
+}
+
+.not-found a {
+  color: var(--accent-h);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* ── Footer ───────────────────────────────────────── */
+footer {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--text);
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 600px) {
+  header {
+    padding: 0.9rem 1.25rem;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+
+  main {
+    padding: 2rem 1.25rem;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
