@@ -7,21 +7,17 @@ const Router = (() => {
   function init(routes, notFoundHandler) {
     _routes = routes;
     _notFound = notFoundHandler;
-
     window.addEventListener("hashchange", _resolve);
-    _resolve(); // DOM já carregado quando init() é chamado
+    _resolve();
   }
 
   function _currentPath() {
-    // transforma "#/projetos" em "/projetos", hash vazio vira "/"
-    const hash = window.location.hash.replace(/^#/, "") || "/";
-    return hash;
+    return window.location.hash.replace(/^#/, "") || "/";
   }
 
   function _resolve() {
     const path = _currentPath();
     const route = _routes.find((r) => r.path === path);
-
     if (route) {
       route.handler(route);
     } else {

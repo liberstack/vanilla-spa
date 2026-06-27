@@ -4,10 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MD-driven JavaScript SPA</title>
+  <title>Meu Site</title>
+  <meta name="description" content="Site pessoal simples e direto." />
   <link rel="stylesheet" href="style.css" />
-
-  <script src="src/marked.min.js"></script>
 </head>
 
 <body>
@@ -17,13 +16,10 @@
     <nav id="nav-links"></nav>
   </header>
 
-  <main id="content">
-    <!-- conteúdo markdown renderizado aqui -->
-  </main>
+  <main id="content"></main>
 
   <footer>
     <span id="footer-copy"></span>
-    <a href="#/legal">Privacidade-Termos</a>
   </footer>
 
   <!-- ordem importa: config → ui → router → app -->
@@ -33,10 +29,8 @@
   <script src="src/app.js"></script>
 
   <script>
-    // Pequenos bindings de config no shell HTML
     document.getElementById("site-name").textContent = CONFIG.site.name;
-    document.getElementById("footer-copy").textContent =
-      `© ${new Date().getFullYear()} ${CONFIG.site.name}`;
+    document.getElementById("footer-copy").textContent = `© ${new Date().getFullYear()} ${CONFIG.site.name}`;
     document.documentElement.lang = CONFIG.site.lang;
   </script>
 

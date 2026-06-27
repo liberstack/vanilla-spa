@@ -18,7 +18,6 @@
   --radius: 6px;
   --max-w: 900px;
   --font: 'Inter', system-ui, sans-serif;
-  --mono: 'Fira Code', 'Cascadia Code', monospace;
 }
 
 html {
@@ -51,7 +50,7 @@ header {
 
 .site-name {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.02em;
@@ -74,7 +73,7 @@ nav a.active {
   color: var(--accent-h);
 }
 
-/* ── Main / content ───────────────────────────────── */
+/* ── Main ─────────────────────────────────────────── */
 main {
   width: 100%;
   max-width: var(--max-w);
@@ -82,6 +81,49 @@ main {
   padding: 3rem 1.5rem;
 }
 
+/* ── Page content ─────────────────────────────────── */
+.page h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.page h2 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin: 2rem 0 0.75rem;
+}
+
+.page p {
+  color: var(--text);
+  margin-bottom: 1.1rem;
+}
+
+.page a {
+  color: var(--accent-h);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page a:hover {
+  color: #fff;
+}
+
+.page ul,
+.page ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--text);
+}
+
+.page li {
+  margin-bottom: 0.4rem;
+}
+
+/* ── Estados ──────────────────────────────────────── */
 .loading {
   color: var(--muted);
   font-size: 0.9rem;
@@ -91,125 +133,7 @@ main {
   color: #f87171;
 }
 
-/* ── Markdown body ────────────────────────────────── */
-.md-body {
-  max-width: 100%;
-}
-
-.md-body h1,
-.md-body h2,
-.md-body h3,
-.md-body h4 {
-  color: #fff;
-  line-height: 1.2;
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.03em;
-}
-
-.md-body h1 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  margin-top: 0;
-}
-
-.md-body h2 {
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-}
-
-.md-body h3 {
-  font-size: 1.15rem;
-  color: var(--text);
-}
-
-.md-body p {
-  margin-bottom: 1.2rem;
-}
-
-.md-body a {
-  color: var(--accent-h);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.md-body a:hover {
-  color: #fff;
-}
-
-.md-body ul,
-.md-body ol {
-  padding-left: 1.5rem;
-  margin-bottom: 1.2rem;
-}
-
-.md-body li {
-  margin-bottom: 0.4rem;
-}
-
-.md-body blockquote {
-  border-left: 3px solid var(--accent);
-  padding: 0.5rem 1rem;
-  margin: 1.5rem 0;
-  color: var(--muted);
-  background: var(--surface);
-  border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-.md-body code {
-  font-family: var(--mono);
-  font-size: 0.85em;
-  background: var(--surface);
-  padding: 0.15em 0.4em;
-  border-radius: 3px;
-  color: var(--accent-h);
-}
-
-.md-body pre {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  overflow-x: auto;
-  margin-bottom: 1.5rem;
-}
-
-.md-body pre code {
-  background: none;
-  padding: 0;
-  color: var(--text);
-  font-size: 0.88rem;
-}
-
-.md-body hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 2rem 0;
-}
-
-.md-body img {
-  max-width: 100%;
-  border-radius: var(--radius);
-}
-
-.md-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.md-body th,
-.md-body td {
-  border: 1px solid var(--border);
-  padding: 0.6rem 0.9rem;
-  text-align: left;
-}
-
-.md-body th {
-  background: var(--surface);
-  color: #fff;
-}
-
-/* 404 */
+/* ── 404 ──────────────────────────────────────────── */
 .not-found {
   text-align: center;
   padding-top: 5rem;
@@ -231,20 +155,8 @@ main {
 footer {
   padding: 1.25rem 2rem;
   border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   font-size: 0.82rem;
   color: var(--muted);
-}
-
-footer a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: var(--text);
 }
 
 /* ── Responsive ───────────────────────────────────── */
@@ -259,10 +171,5 @@ footer a:hover {
 
   main {
     padding: 2rem 1.25rem;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 0.5rem;
   }
 }
