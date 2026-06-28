@@ -1,4 +1,4 @@
-// router.js — escuta mudanças de hash e despacha para o handler certo
+// router.js — hash router
 
 const Router = (() => {
   let _routes = [];
