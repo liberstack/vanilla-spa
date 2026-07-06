@@ -63,4 +63,4 @@ npx serve .
 
 ## Deploy
 
-Veja o [DEPLOY.md](./DEPLOY.md).
+Veja o [DEPLOY.md](./DEPLOY.md). 
