@@ -1,0 +1,51 @@
+{
+  "site": {
+    "name": "Estúdio Norte",
+    "tagline": "Consultoria em estratégia, processos e tecnologia.",
+    "email": "contato@estudionorte.example",
+    "phone": "+55 (11) 3000-0000",
+    "address": "Rua Exemplo, 123 — Cidade, UF"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "label": "Início",
+      "nav": true,
+      "title": "Início",
+      "description": "Consultoria em estratégia, processos e tecnologia para empresas de médio porte.",
+      "heading": "Menos ruído, mais resultado para a sua operação.",
+      "lead": "Ajudamos empresas a organizar processos, escolher as ferramentas certas e entregar o que foi planejado.",
+      "module": "home"
+    },
+    {
+      "path": "/about",
+      "label": "Sobre",
+      "nav": true,
+      "title": "Sobre",
+      "description": "Quem somos, como trabalhamos e o que valorizamos.",
+      "heading": "Uma equipe pequena, com método e responsabilidade.",
+      "lead": "Atuamos desde 2012 com empresas de diferentes setores.",
+      "module": "about"
+    },
+    {
+      "path": "/work",
+      "label": "Trabalhos",
+      "nav": true,
+      "title": "Trabalhos",
+      "description": "Projetos recentes entregues para clientes de diversos setores.",
+      "heading": "Projetos recentes.",
+      "lead": "Uma seleção de entregas, com o contexto e o resultado de cada uma.",
+      "module": "work"
+    },
+    {
+      "path": "/contact",
+      "label": "Contato",
+      "nav": true,
+      "title": "Contato",
+      "description": "Fale com a equipe por e-mail, telefone ou formulário.",
+      "heading": "Fale com a equipe.",
+      "lead": "Conte o que você precisa. Respondemos em até dois dias úteis.",
+      "module": "contact"
+    }
+  ]
+}

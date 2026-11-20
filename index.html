@@ -2,39 +2,44 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Site</title>
-  <meta name="description" content="Site pessoal simples e direto." />
-  <link rel="stylesheet" href="src/styles/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estúdio Norte</title>
+  <meta name="description" content="Consultoria em estratégia, processos e tecnologia.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B6B5D'/%3E%3Cpath d='M9 24V8l14 16V8' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/style.css">
+  <script type="module" src="src/scripts/main.js"></script>
 </head>
 
 <body>
+  <a class="skip" href="#app">Ir para o conteúdo</a>
 
-  <header>
-    <a href="#/" class="site-name" id="site-name"></a>
-    <nav id="nav-links"></nav>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="#/" data-site-name>Estúdio Norte</a>
+      <nav aria-label="Principal">
+        <ul class="nav" id="nav"></ul>
+      </nav>
+    </div>
   </header>
 
-  <main id="content"></main>
+  <main id="app" tabindex="-1">
+    <noscript>
+      <p class="wrap section">Este site precisa de JavaScript para funcionar.</p>
+    </noscript>
+  </main>
 
-  <footer>
-    <span id="footer-copy"></span>
-    <p><a href="#/legal">Privacidade e Termos</a></p>
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <p>© <span id="year"></span> <span data-site-name></span></p>
+      <p><a id="foot-email" href="#/contact"></a></p>
+    </div>
   </footer>
-
-  <!-- ordem importa: config → ui → router → app -->
-  <script src="src/scripts/config.js"></script>
-  <script src="src/scripts/pages.js"></script>
-  <script src="src/scripts/router.js"></script>
-  <script src="src/scripts/main.js"></script>
-
-  <script>
-    document.getElementById("site-name").textContent = CONFIG.site.name;
-    document.getElementById("footer-copy").textContent = `© ${new Date().getFullYear()} ${CONFIG.site.name}`;
-    document.documentElement.lang = CONFIG.site.lang;
-  </script>
-
 </body>
 
 </html>
