@@ -22,8 +22,8 @@ function markActive(path) {
 
 async function init() {
   try {
-    const res = await fetch(new URL("./data.json", import.meta.url));
-    if (!res.ok) throw new Error(`data.json: HTTP ${res.status}`);
+    const res = await fetch(new URL("./routes.json", import.meta.url));
+    if (!res.ok) throw new Error(`routes.json: HTTP ${res.status}`);
     const { site, pages } = await res.json();
 
     document
